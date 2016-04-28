@@ -76,9 +76,9 @@ class realtimeHandler(tornado.web.RequestHandler):
         
         global  taglist 
         
-        tag_path = os.path.dirname(__file__)
+        tagfile=os.path.join(os.path.dirname(__file__), 'turbine_tag.txt') 
         
-        taglist = GetTagDefInfo(tag_path + '\\turbine_tag.txt')
+        taglist = GetTagDefInfo(tagfile)
         
         tagvalue = TagSnapshot(taglist)
         
