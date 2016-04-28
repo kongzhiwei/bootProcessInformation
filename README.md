@@ -29,6 +29,16 @@ Email:    cmh@seu.edu.cn
 ### Browser
 
 	Support Websocket
+	
+### Run
+
+	1. analysis_task\turbine\task_turbine_sampling_simulation.py
+	
+	2. analysis_thread\online_task_thread.py
+	
+	3. www\app.py
+	
+	4. http://127.0.0.1:8000
 
 ## Dir
 ```
