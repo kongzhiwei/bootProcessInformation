@@ -22,6 +22,12 @@ except:
 
 
 # add your module 
+try:
+    from analysis_task.m300exair.task_exair_online_analysis import UnitExaircoff
+except:
+    import sys
+    sys.path.append("..")
+    from analysis_task.m300exair.task_exair_online_analysis import UnitExaircoff
  
 if __name__ == "__main__":
 
@@ -36,7 +42,13 @@ if __name__ == "__main__":
     DemoUnitHP = UnitHP(taginfile, tagoutfile)
     TaskList.append(DemoUnitHP)
     
-    # add you tesk
+    # add your task
+    taginfile = os.path.join(analysis_taskpath, "m300exair", "task_exair_tag_in.txt")
+    tagoutfile = os.path.join(analysis_taskpath, "m300exair", "task_exair_tag_out.txt")
+    
+    TaskExaircoff = UnitExaircoff(taginfile, tagoutfile)
+    TaskList.append(TaskExaircoff)
+    
     
     OnlineTasks = PeriodAnalysis(2, TaskList)
     OnlineTasks.setouttag()
