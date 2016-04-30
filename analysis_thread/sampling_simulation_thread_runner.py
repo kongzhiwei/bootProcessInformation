@@ -20,6 +20,13 @@ except:
     sys.path.append("..")
     from analysis_task.demo_turbine.task_turbine_sampling_simulation import UnitHPSimulation
 
+try:   
+    from analysis_task.m300exair.task_exair_sampling_simulation import UnitExaircoffSimulation
+except:
+    import sys
+    sys.path.append("..")
+    from  analysis_task.m300exair.task_exair_sampling_simulation import  UnitExaircoffSimulation
+
 # add your module 
  
 if __name__ == "__main__":
@@ -35,6 +42,10 @@ if __name__ == "__main__":
     TaskList.append(SimulationUnitHP)
     
     # add you tesk
+    taginfile = os.path.join(analysis_taskpath, "m300exair", "task_exair_tag_in.txt")
+    
+    Simulation = UnitExaircoffSimulation(taginfile)
+    TaskList.append(Simulation)
     
     
     OnlineTasks = PeriodSampling(2, TaskList)

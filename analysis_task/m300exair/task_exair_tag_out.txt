@@ -1,0 +1,2 @@
+id	desc defaultvalue
+DEMO.DCS2AO.EXAIRCOFF  过量空气系数     10.00
