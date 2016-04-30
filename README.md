@@ -170,7 +170,7 @@ for examle your task:  m300test
     TaskList.append(task)
 ```    
 
-#### 3 Test your task 
+#### 3 Running your task 
     
     3.1 Redis Server On
     
@@ -178,9 +178,9 @@ for examle your task:  m300test
     
     3.3 online_analysis_thread_runner.py
 
-## Task on WWW Server
+## WWW Server
 
-### 1 Add your task user page
+### 1 Add your task page
 
 ####  1.1  page templates: 
 
@@ -193,7 +193,7 @@ for examle your task:  m300test
 ```    
 #### 1.2  page handler: 
 
- `www/handler/m300test_handler.py`  
+`www/handler/m300test_handler.py`  
     
 `www/handler/m300test_tag.txt (utf-8)`
      
@@ -215,7 +215,7 @@ for examle your task:  m300test
     
     from www.handler.m300test_handler import *
   
- www/app.py
+`www/app.py`
     
  ```python  
      try:
