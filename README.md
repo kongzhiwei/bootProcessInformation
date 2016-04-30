@@ -2,7 +2,6 @@
 
 The Prototype Project of  Real-time Monitoring System for Thermal Power Plant for you to study and practice 
 
-
 Author:   Cheng Maohua
 
 Email:    cmh@seu.edu.cn
@@ -254,4 +253,7 @@ for examle your task:  m300test
         </ul>
  </div>
 ```         
-             
+ 
+## License
+
+MIT           
