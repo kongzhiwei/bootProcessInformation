@@ -1,1 +1,3 @@
-from analysis_task.turbine.task_turbine_online_analysis import *
+from analysis_task.demo_turbine import *
+ 
+# add your module here

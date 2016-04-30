@@ -5,21 +5,37 @@ Email:    cmh@seu.edu.cn
 
 License: this code is in the public domain
 """
-
 import tornado.web
 import tornado.httpserver
 import tornado.ioloop
 import tornado.options
 import os
 
-import www.handler.turbine_handler as tb
+try:
+    import www.handler.demo_turbine_handler as demo_tb
+except:
+    import handler.demo_turbine_handler as demo_tb
 
+# import you handler 
+
+class indexHandler(tornado.web.RequestHandler):
+
+    def get(self):
+        self.render("index.html")
+        
 class Application(tornado.web.Application):
 
     def __init__(self):
         handlers = [
-            (r"/", tb.realtimeHandler),
-            (r"/tbwebsocket", tb.WebSocketHandler),
+           
+            (r"/", indexHandler),
+           
+            # demo handler
+            (r"/demo_tb/", demo_tb.initHandler),
+            (r"/demo_tbwebsocket", demo_tb.WebSocketHandler),
+            
+            # add your handler，： 
+            
         ]
 
         settings = dict(
@@ -38,9 +54,10 @@ if __name__ == '__main__':
 
     mainLoop = tornado.ioloop.IOLoop.instance()
   
-    scheduler_tb = tornado.ioloop.PeriodicCallback(tb.sendmsssage2client, 2000, io_loop=mainLoop)
- 
-    scheduler_tb.start()
+    scheduler_demo_tb = tornado.ioloop.PeriodicCallback(demo_tb.sendmsssage2client, 2000, io_loop=mainLoop)
+    scheduler_demo_tb.start()
+    
+    # add your  scheduler_
     
     print('Web Server start')
     mainLoop.start()

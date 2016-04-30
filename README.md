@@ -28,13 +28,13 @@ Email:    cmh@seu.edu.cn
 
 ### Browser
 
-	Support Websocket
+	Support Websocket(HTML5)
 	
 ### Run
 
-	1. analysis_task\turbine\task_turbine_sampling_simulation.py
+	1. analysis_thread\sampling_simulation_thread_runner.py
 	
-	2. analysis_thread\online_task_thread.py
+	2. analysis_thread\online_task_thread_runner.py
 	
 	3. www\app.py
 	
@@ -46,12 +46,17 @@ PrototypeRealTimeMonitoring
         |
         |---analysis_task :  Real-time  Monitoring task
         |         |
-        |         |--turbine
+        |         |--demo_turbine : demo task 
         |         |
-        |         |--boiler
+        |         |--m300task: add your task
         |         | 
         |
         |---analysis_thread: 
+        |         |
+        |         |--sampling_simulation_thread_runner.py: sampling simulation
+        |         |
+        |         |--online_task_thread_runner.py : online analysis
+        |
         |
         |---db: redis
         |
@@ -61,9 +66,9 @@ PrototypeRealTimeMonitoring
              |
              |--handler
              |        |
-             |        |--*_handler.py
+             |        |--*_handler.py :handler of  each task
              |        | 
-             |        |--*_tag.txt  
+             |        |--*_tag.txt    : tag of  each task
              |        |
              |
              |--static
@@ -75,8 +80,9 @@ PrototypeRealTimeMonitoring
              |
              |--templates
              |        |
-             |        |--*_ui.html
+             |        |--index.html: main page
              |        |
+             |        |--*_ui.html : page of each task
              |
              |--app.py：： start web server
              |

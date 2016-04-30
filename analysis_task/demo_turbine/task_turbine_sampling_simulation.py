@@ -6,18 +6,14 @@ Email:    cmh@seu.edu.cn
 
 License: this code is in the public domain
 """
-import threading
 from db.pyredis import TagDefToRedisHashKey, SendToRedisHash
 from datetime import datetime
-import time
 import random
 import codecs
 
 class UnitHPSimulation:
 
-    def __init__(self, delay, tagfile):
-        self.delay = delay
-        self.next_call = time.time()
+    def __init__(self, tagfile):
         
         self.ailist = []
         file = codecs.open(tagfile, 'r', 'utf-8')
@@ -40,17 +36,6 @@ class UnitHPSimulation:
             tag['ts'] = curtime 
         SendToRedisHash(self.ailist)
 
-        print(self.ailist[0]['value'])
-
-    def worker(self):
-        self.run()
-        self.next_call = self.next_call + self.delay
-        threading.Timer(self.next_call - time.time(), self.worker).start()
-        
-if __name__ == "__main__":
-    
-    UnitHPSimu = UnitHPSimulation(2, 'task_turbine_tag_in.txt')
-    UnitHPSimu.settag()
-    UnitHPSimu.worker()
+        print('sampling on ', self.ailist[0]['value'])
  
    

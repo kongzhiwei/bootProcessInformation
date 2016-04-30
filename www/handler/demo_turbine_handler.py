@@ -42,7 +42,6 @@ def TagSnapshot(taglist):
         pipe.hget(element['id'], 'value')
     tagvaluelist = pipe.execute()
 
-
     tagvalue = list()
     for element in  tagvaluelist:
         try: 
@@ -68,7 +67,7 @@ def sendmsssage2client():
         for c in turbineclients:
             c.write_message(json.dumps(response_to_send))
 
-class realtimeHandler(tornado.web.RequestHandler):
+class initHandler(tornado.web.RequestHandler):
 
     def get(self):
 
@@ -76,7 +75,8 @@ class realtimeHandler(tornado.web.RequestHandler):
         
         global  taglist 
         
-        tagfile=os.path.join(os.path.dirname(__file__), 'turbine_tag.txt') 
+        tagfile = "./handler/demo_turbine_tag.txt"
+        print(tagfile)
         
         taglist = GetTagDefInfo(tagfile)
         
@@ -90,7 +90,7 @@ class realtimeHandler(tornado.web.RequestHandler):
         clients_machine_ip.append(self.request.remote_ip)
         print('Client IP:', self.request.remote_ip)
 
-        self.render("turbine_ui.html", title=title, tagname=taglist)
+        self.render("demo_turbine_ui.html", title=title, tagname=taglist)
 
     def post(self):
         pass

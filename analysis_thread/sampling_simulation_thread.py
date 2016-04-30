@@ -1,24 +1,22 @@
 # -*- coding: utf-8 -*-
 """
-
-Author:   Cheng Maohua
+Author:   Cheng Maohua  
 Email:    cmh@seu.edu.cn
-
 License: this code is in the public domain
 """
 import threading
 import time
  
-class PeriodTasks():
+class PeriodSampling():
 
     def __init__(self, delay, tasks):
         self.tasks = tasks
         self.delay = delay
         self.next_call = time.time()
   
-    def setoutag(self):
+    def settag(self):
         for task in self.tasks:
-            task.setouttag()
+            task.settag()
     
     def worker(self):
         for task in self.tasks:

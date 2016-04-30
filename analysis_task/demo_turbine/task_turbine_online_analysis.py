@@ -1,15 +1,16 @@
 # -*- coding: utf-8 -*-
 """
-
 Author:   Cheng Maohua
 Email:    cmh@seu.edu.cn
 
 License: this code is in the public domain
 """
-from db.pyredis import TagDefToRedisHashKey, tagvalue_redis, SendToRedisHash
-from .pyturbine import CylinderEff 
 from datetime import datetime
 import codecs
+
+from db.pyredis import TagDefToRedisHashKey, tagvalue_redis, SendToRedisHash
+
+from analysis_task.demo_turbine.pyturbine import  CylinderEff
 
 class UnitHP:
 

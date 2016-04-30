@@ -1,6 +1,0 @@
-desc   id		si
-二号机组高压缸入口压力	DEMO.DCS2AI.2JZA2226	MPa
-二号机组高压缸入口温度	DEMO.DCS2AI.2JZA2408	℃
-  二号机组高压缸出口压力	DEMO.DCS2AI.2JZA2230	MPa       
-二号机组高压缸出口温度	DEMO.DCS2AI.2JZA2459	℃    
-二号机组高压缸内效率	DEMO.DCS2AO.HP_EFF_IS	% 

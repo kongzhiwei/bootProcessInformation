@@ -24,12 +24,12 @@
  		   tabletaglist.push(obj);
       {% end %}
   	   
- 	    ws = new WebSocket("ws://" + window.location.host + "/tbwebsocket");
+     ws = new WebSocket("ws://" + window.location.host + "/demo_tbwebsocket");
  	 
  	 </script>
  	
  	 <script type="text/javascript" src="/static/js/ws.js"></script>
-
+ 
 </head>
 <body id="bootstrap-js">
 <div class="wrapper">
@@ -37,14 +37,20 @@
          <div class="navbar-inner">
             <div class="container" style="width: auto;">
                <h3 class="brand">{{title}}</h3>
+                 <div class="nav-collapse">
+                   <ul class="nav pull-right">
+                     <li class="active"><a href="/">返回首页</a></li>
+                    </ul>
+                  </div>
             </div>
          </div>
       </div>
-      <div class="offset5 span7">
+      
+      <div class="offset2 span7">
     	 <div>
     	      <span id="tag"></span>
-  	          <script type="text/javascript" src="/static/js/table_taglist.js" ></script>
-		 </div>			 
+   	          <script type="text/javascript" src="/static/js/table_taglist.js" ></script>
+  	     </div>   
   	 </div>
  </div>	 
  
