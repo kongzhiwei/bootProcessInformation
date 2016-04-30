@@ -182,7 +182,7 @@ for examle your task:  m300test
 
 Add your task page and handler
 
-### 1  page templates: 
+### 1  page template: 
 
  `www/templates/m300test_ui.html `
   
@@ -191,7 +191,7 @@ Add your task page and handler
      ws = new WebSocket("ws://" + window.location.host + "/m300test_websocket");
  </script>
 ```    
-### 1  page handler: 
+### 2  page handler: 
 
 `www/handler/m300test_handler.py`  
     
