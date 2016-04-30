@@ -1,0 +1,2 @@
+id	desc	defaultvalue
+DEMO.DCS2AI.2JZA2226	空预器出空烟气氧量	12
