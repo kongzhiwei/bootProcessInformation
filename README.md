@@ -1,6 +1,7 @@
 # bootProcessInformation
 
-The Prototype Project of  Real-time Monitoring System for Thermal Power Plant
+The Prototype Project of  Real-time Monitoring System for Thermal Power Plant for you to study and practice 
+
 
 Author:   Cheng Maohua
 
