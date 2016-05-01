@@ -12,9 +12,14 @@ import tornado.options
 import os
 
 try:
-    import www.handler.demo_turbine_handler as demo_tb
+    import www.handler.demo_turbine_handler as demo_turbine
 except:
-    import handler.demo_turbine_handler as demo_tb
+    import handler.demo_turbine_handler as demo_turbine
+
+try:
+    import www.handler.m300exair_handler as m300exair
+except:
+    import handler.m300exair_handler as m300exair
 
 # import you handler 
 
@@ -31,10 +36,12 @@ class Application(tornado.web.Application):
             (r"/", indexHandler),
            
             # demo handler
-            (r"/demo_tb/", demo_tb.initHandler),
-            (r"/demo_tbwebsocket", demo_tb.WebSocketHandler),
+            (r"/demo_tb/", demo_turbine.initHandler),
+            (r"/demo_tbwebsocket", demo_turbine.WebSocketHandler),
             
             # add your handler，： 
+            (r"/m300exair/", m300exair.initHandler),
+            (r"/m300exair_websocket",m300exair.WebSocketHandler),
             
         ]
 
@@ -54,11 +61,11 @@ if __name__ == '__main__':
 
     mainLoop = tornado.ioloop.IOLoop.instance()
   
-    scheduler_demo_tb = tornado.ioloop.PeriodicCallback(demo_tb.sendmsssage2client, 2000, io_loop=mainLoop)
+    scheduler_demo_tb = tornado.ioloop.PeriodicCallback(demo_turbine.tb_tag.sendmsssage2client, 2000, io_loop=mainLoop)
     scheduler_demo_tb.start()
     
     # add your  scheduler_
     
-    print('Web Server start')
+    print('Web Server started! ')
     mainLoop.start()
    

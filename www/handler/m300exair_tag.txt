@@ -1,0 +1,3 @@
+﻿desc	id	si
+空预器进口烟气氧量	DEMO.DCS2AI.2JZA2214   %
+空预器进口过量空气系数	DEMO.DCS2AO.EXAIRCOFF	/	

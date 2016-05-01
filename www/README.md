@@ -11,7 +11,7 @@ Websocket
 
 ## Launching the server
 
-python app.py
+app.py
 
 ## Enjoying live data
 
