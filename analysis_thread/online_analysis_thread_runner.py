@@ -37,7 +37,7 @@ if __name__ == "__main__":
     analysis_taskpath = os.path.join(pardir, "analysis_task")
     
     taginfile = os.path.join(analysis_taskpath, "demo_turbine", "task_turbine_tag_in.txt")
-    tagoutfile = os.path.join(analysis_taskpath, "demo_cturbine", "task_turbine_tag_out.txt")
+    tagoutfile = os.path.join(analysis_taskpath, "demo_turbine", "task_turbine_tag_out.txt")
     
     DemoUnitHP = UnitHP(taginfile, tagoutfile)
     TaskList.append(DemoUnitHP)

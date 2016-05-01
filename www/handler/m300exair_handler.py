@@ -18,28 +18,28 @@ from www.handler.gen_taginfo import gentag
 
 conn = redis.Redis('localhost')
 
-tb_tag=gentag("./handler/demo_turbine_tag.txt")
+cur_tag=gentag("./handler/m300exair_tag.txt")
       
 class initHandler(tornado.web.RequestHandler):
 
     def get(self):
 
-        title = '在线监视客户端： 高压缸效率'
+        title = '在线监视客户端： 过量空气系数'
         
-        tb_tag.GetTagDefInfo()
-        tagvalue = tb_tag.TagSnapshot()
+        cur_tag.GetTagDefInfo()
+        tagvalue = cur_tag.TagSnapshot()
        
         print('tagvaue',tagvalue)
-        print('tagvaue', tb_tag.taglist)
+        print('tagvaue', cur_tag.taglist)
         for i in range(len(tagvalue)):
-            tb_tag.taglist[i]['value'] = '{:.2f}'.format(tagvalue[i])
+            cur_tag.taglist[i]['value'] = '{:.2f}'.format(tagvalue[i])
         
-        print(tb_tag.taglist)
+        print(cur_tag.taglist)
 
-        tb_tag.clients_machine_ip.append(self.request.remote_ip)
+        cur_tag.clients_machine_ip.append(self.request.remote_ip)
         print('Client IP:', self.request.remote_ip)
 
-        self.render("demo_turbine_ui.html", title=title, tagname=tb_tag.taglist)
+        self.render("m300exair_ui.html", title=title, tagname=cur_tag.taglist)
 
     def post(self):
         pass
@@ -53,12 +53,12 @@ class WebSocketHandler(tornado.websocket.WebSocketHandler):
         print("message received " + message)
 
     def open(self):
-        if self not in tb_tag.clients:
-            tb_tag.clients.append(self)
+        if self not in cur_tag.clients:
+            cur_tag.clients.append(self)
             self.write_message(u"Connected")
-            print("Turbine WS Clients" + str(len(tb_tag.clients)))
+            print("WS Clients" + str(len(cur_tag.clients)))
 
     def on_close(self):
-        if self in tb_tag.clients:
-            tb_tag.clients.remove(self)
-            print("Turbine WS Clientse " + str(len(tb_tag.clients)))
+        if self in cur_tag.clients:
+            cur_tag.clients.remove(self)
+            print("Turbine WS Clientse " + str(len(cur_tag.clients)))
