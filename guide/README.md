@@ -451,7 +451,11 @@ local after pull
 
 ## Step Seven:  forked branch sync with the source branch
 
-new pull request in your forked branch 
+the source branch append guide after your forked, 
+
+sync action: 
+
+7.1 new pull request in your forked branch 
 
 ![7_sync_1](./img/7_sync_1.png)
 
@@ -463,9 +467,15 @@ new pull request in your forked branch
 
 Create　pull request:
 
-request pull source branch(right) to your forked branch (left)
+note: request pull source branch(right) to your forked branch (left)
+
+![7_sync_30](./img/7_sync_30.png)
 
 ![7_sync_3](./img/7_sync_3.png)
+
+you can see all commit in source branch after you forked
+
+![7_sync_31](./img/7_sync_31.png)
 
 pull request +1 :
 
@@ -476,3 +486,7 @@ pull request +1 :
 merge pull request(source branch to your branch)
 
 ![7_sync_6](./img/7_sync_6.png)
+
+synced branch
+
+![7_sync_7](./img/7_sync_7.png)
