@@ -11,22 +11,22 @@ Git Platform: Github.com
  
 Development Software: Eclipse CDT, EGIT,PyDev
   
-Document Software: Microsoft Visual Code
+Document Software: Microsoft Visual Studio Code
         
  ```
-    One:  Fork bootProcessInformation to your GitHub
+      One:  Fork source bootProcessInformation to your GitHub
     
-    Two:  Clone bootProcessInformation to your local 
+      Two:  Clone fored bootProcessInformation to your local repository
     
-    Three: Import to Eclipse Workspace 
+    Three: Import bootProcessInformation form local repository to Eclipse Workspace 
     
-    Four: Coding your task 
+     Four: Coding your task 
     
-    Five:  Push to your GitHub
+     Five: Push to your GitHub
     
-    Six:  push request and Merge to the base branch
+      Six:  push request and Merge to the base branch
     
-   Seven:  sync with the base branch
+    Seven:  sync with the base branch
     
  ```    
 
@@ -35,7 +35,6 @@ Document Software: Microsoft Visual Code
 Fork source bootProcessInformation
 
 ![Fork](./img/1_fork.png)
-
 
 Forked bootProcessInformation in your GitHub account
 
@@ -80,25 +79,21 @@ choose your project
 
 imported projects
  
-3_workspace_imported.png
-
 ![3_workspace_imported](./img/3_workspace_imported.png)
 
 ## Step Four: Coding your task 
 
 ### 4.1 your analysis_task package 
 
-new pythhon package m300exair
+new python package : m300exair
 
 /PrototypeRealTimeMonitoring/analysis_task/m300exair
 
 ![4_newpackage.png](./img/4_newpackage.png)
 
-
 ![4_newmodel](./img/4_newmodel.png)
 
 copy all files of  ``analysis_task/demo_turbine``` to your m300exair , rename to
-
 
 ```
 analysis_task
@@ -263,10 +258,9 @@ except:
 
 Test Running
 
-/m300exair/task_exair_sampling_simulation.py
+```/m300exair/task_exair_sampling_simulation.py```
 
 ![4_simulation](./img/4_simulation.png)
-
 
 #### 4.2.2 analysis_thread/online_analysis_thread_runner.py
 
@@ -291,7 +285,7 @@ except:
 
 Test Running
 
-analysis_thread/online_analysis_thread_runner.py
+```analysis_thread/online_analysis_thread_runner.py```
 
 ![4_online_analysis](./img/4_online_analysis.png)
 
@@ -303,13 +297,14 @@ analysis_thread/online_analysis_thread_runner.py
  copy  demo files and rename to your task,then codeing
  
  handler/m300exair_tag.txt
+ 
  ```
  desc	id	si
 空预器进口烟气氧量	DEMO.DCS2AI.2JZA2214   %
 空预器进口过量空气系数	DEMO.DCS2AO.EXAIRCOFF	/	
  ```
 
-handler/m300exair_handler.py
+```handler/m300exair_handler.py```
 
 ```python
 cur_tag=gentag("./handler/m300exair_tag.txt")
@@ -348,7 +343,8 @@ then modifying ```/templates/m300exair_ui.html``` contents
  #### 4.3.3 add your page tamplate to site
  
  midifing `/www/app.py`
- ```python
+ 
+  ```python
  
  try:
     import www.handler.m300exair_handler as m300exair
